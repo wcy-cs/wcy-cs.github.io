@@ -135,7 +135,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-         Face restoration aims to recover high-quality face images from the low-quality ones. With the advent of deep learning, face restoration technique has achieved significant breakthroughs. However, human face captured at night or in dimly lit environments has become a common practice, accompanied low-light degradation which is ignored by the existing methods. Moreover, existing methods focus exclusively on recovering face images within the spatial domain, rarely exploring the possible solutions in the frequency domain that is important for computer vision, let alone explore the collaboration between spatial and frequency domains. In this paper, we propose a novel spatial-frequency mutual learning network for low-light face restoration. First, we observe that the amplitude component contains lightness information while the phase component can characterize structure information, making Fourier transform naturally suited for this task. Thus, Fourier transform is introduced to extract frequency information. Considering that facial structure and lightness information can mutually reinforce each other, we develop an amplitude-phase interaction block (APIB) to explore the relationship between amplitude and phase. In addition, Fourier transform can capture global facial structure information and achieve image-size receptive field, and this can well complement the local facial features extracted in spatial domain. Considering that local spatial feature and global frequency feature are complementary and can boost low-light face restoration, we further develop a dual frequency-spatial interaction block (DFSIB) which mutually amalgamates the complementary spatial and frequency information to enhance the feature representation capability of the model. Extensive experiments validate the effectiveness of our method and demonstrate its superior performance over prior arts in recovering low-light face images, validating its potential in wide-range applications.
+        Face restoration aims to recover high-quality face images from the low-quality ones. With the advent of deep learning, face restoration technique has achieved significant breakthroughs. However, human face captured at night or in dimly lit environments has become a common practice, accompanied low-light degradation which is ignored by the existing methods. Moreover, existing methods focus exclusively on recovering face images within the spatial domain, rarely exploring the possible solutions in the frequency domain that is important for computer vision. Methods only in spatial domain cannot simultaneously preserve both lightness and structure details. In frequency domain, the amplitude component contains lightness information while the phase component can characterize facial structure information, making Fourier transform naturally suited for this task. Thus, we propose a novel spatial-frequency mutual learning network for low-light face restoration. Given the complementarity between spatial and frequency domains and the intrinsic coupling of phase and amplitude, we propose a dual interactive coupling mechanism, including spatial-frequency and amplitude-phase interactions. Towards the former, we develop a bi-directional frequency-spatial interaction block to mutually amalgamate the complementary spatial and frequency information, enhancing the feature representation capability of the model. As for the latter, the amplitude-phase interaction block is built to achieve the collaboration between phase and amplitude (structure and lightness), performing better low-light face restoration. Extensive experiments validate the effectiveness of our method and demonstrate its superior performance over prior arts in recovering low-light face images, validating its potential in wide-range applications.
           </p>
         </div>
       </div>
@@ -144,6 +144,23 @@
 </section>
 <!-- End paper abstract -->
 
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Motivation</h2>
+        <div class="content has-text-justified">
+          <p>
+       We exchange the amplitude component of LL and NL, and then reconstruct the corresponding face images by inverse Fourier transform. In Fig. a, it can be seen that the light of the two faces exchanges following the swapping of amplitude although the reconstructed face has obvious artifacts. This phenomenon indicates the amplitude component represents the lightness of the face image. We also obverse that the exchanged faces has obvious artifacts, demonstrating that phase and amplitude are coupled and enhancing only one component would not yield satisfactory results. Moreover, Fig. b illustrates the face images reconstructed by the amplitude component and phase component, respectively. Obviously, the phase representation reveals clear global facial structure information that can boost face restoration. That is to say, the amplitude component represents lightness information and the phase component can well characterize the facial structure information, making the Fourier transform a perfect fit for low-light face restoration task. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
 
 <!-- Image carousel -->
 <section class="hero is-small">
